@@ -7,7 +7,7 @@ const Layout = () => {
 
     const handleGoHome = () => {
         const isFinishPage = location.pathname.match(/\/finish/);
-        const isQuizPage = location.pathname.match(/\quiz/);
+        const isQuizPage = location.pathname.match(/\/quiz/);
         if (!isQuizPage) {
             nav('/', { replace: isFinishPage });
         }

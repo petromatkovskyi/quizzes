@@ -80,7 +80,6 @@ const QuestionCard = ({
                 marginBottom: 2,
                 boxShadow: 2,
                 borderRadius: 2,
-                marginX: 1,
             }}
         >
             <Typography component="h3" variant="h5" marginBottom={2}>
