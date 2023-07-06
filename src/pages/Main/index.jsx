@@ -10,7 +10,7 @@ const Main = () => {
 
     const handleLucky = () => {
         const randomQuizIndex = Math.round(Math.random() * (quizzes.length - 1));
-        nav(`/quiz/${quizzes[randomQuizIndex]?.id}`);
+        nav(`/quizzes/quiz/${quizzes[randomQuizIndex]?.id}`);
     };
 
     return (
