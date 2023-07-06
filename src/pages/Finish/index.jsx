@@ -53,7 +53,7 @@ const Finish = () => {
         >
             <Box>
                 {totalTime && (
-                    <Typography>Time : {formateDataAndTime(totalTime)}</Typography>
+                    <Typography>Time: {formateDataAndTime(totalTime)}</Typography>
                 )}
                 {total && <Typography>Total question :{total}</Typography>}
                 {correct && incorrect && (

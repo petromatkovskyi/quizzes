@@ -18,12 +18,10 @@ const QuitDialog = ({ open, handleClose, nav }) => {
             aria-labelledby="alert-dialog-title"
             aria-describedby="alert-dialog-description"
         >
-            <DialogTitle id="alert-dialog-title">
-                {"Use Google's location service?"}
-            </DialogTitle>
+            <DialogTitle id="alert-dialog-title">Quit</DialogTitle>
             <DialogContent>
                 <DialogContentText id="alert-dialog-description">
-                    All progress will be lost. Are you sure you want to quit?
+                    Are you sure you want to quit? All progress will be lost.
                 </DialogContentText>
             </DialogContent>
             <DialogActions>

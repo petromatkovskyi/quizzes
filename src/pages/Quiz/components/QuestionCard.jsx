@@ -35,6 +35,7 @@ const QuestionCard = ({
 }) => {
     const [randomAnswers, setRandomAnswers] = useState([]);
     const [answerLabel, setAnswerLabel] = useState('');
+    const [isAnswered, setIsAnswered] = useState(false);
 
     const startDate = useMemo(() => new Date(), [activeQuestion]);
 
@@ -50,6 +51,9 @@ const QuestionCard = ({
             timeAmount: new Date() - startDate,
         };
         setAnswer(answerObj);
+        if (answer && !isAnswered) {
+            setIsAnswered(true);
+        }
     };
 
     useEffect(() => {
@@ -63,6 +67,7 @@ const QuestionCard = ({
             );
             return incorrectAnswers;
         });
+        setIsAnswered(false);
         setAnswerLabel('');
     }, [activeQuestion]);
 
@@ -116,7 +121,7 @@ const QuestionCard = ({
             </RadioGroup>
             <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
                 <Button
-                    variant="outlined"
+                    variant={isAnswered ? 'contained' : 'outlined'}
                     color="success"
                     onClick={handleSetAnswer}
                     disabled={!answerLabel}

@@ -12,10 +12,10 @@ const PieChart = ({ data }) => {
                 borderRadius: 3,
             }}
         >
-            <Chart data={data} width={matches ? 150 : 300} height={matches ? 300 : 300}>
+            <Chart data={data} width={matches ? 300 : 300} height={matches ? 400 : 400}>
                 <PieSeries valueField="value" argumentField="argument" />
                 <Legend position="bottom" />
-                <Title text="Correct / Incorrect" />
+                <Title text="Answers" />
             </Chart>
         </Paper>
     );

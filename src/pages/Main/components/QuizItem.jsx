@@ -1,6 +1,5 @@
-import { Button, Card, CardActions, CardContent, Typography } from '@mui/material';
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Button, Card, CardActions, CardContent, Typography } from '@mui/material';
 
 const QuizItem = ({ category, amount, id }) => {
     const nav = useNavigate();

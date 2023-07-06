@@ -20,10 +20,11 @@ const Main = () => {
                     <Button
                         sx={{
                             display: 'block',
-                            width: '6rem',
+                            minWidth: '6rem',
                             marginX: 'auto',
                             marginBottom: 2,
                         }}
+                        variant="outlined"
                         onClick={handleLucky}
                     >
                         I'm lucky

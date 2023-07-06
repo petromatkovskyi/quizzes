@@ -88,6 +88,7 @@ const Quiz = ({ quizzes }) => {
     const setAnswer = (answer) => {
         setAnswers((prevAnswers) => {
             if (answer.num > prevAnswers.at(-1)?.num || !prevAnswers.length) {
+                handleNext();
                 return [...prevAnswers, answer];
             }
             return prevAnswers.map((prevAnswer) =>

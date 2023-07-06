@@ -30,7 +30,7 @@ const Layout = () => {
                     variant="h4"
                     component="h1"
                     sx={{
-                        fontSize: { xs: '1.1rem', sm: '2rem' },
+                        fontSize: { xs: '1.5rem', sm: '2rem' },
                         textAlign: 'center',
                         cursor: 'pointer',
                     }}
