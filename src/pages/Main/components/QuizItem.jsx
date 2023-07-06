@@ -6,7 +6,7 @@ const QuizItem = ({ category, amount, id }) => {
     const nav = useNavigate();
 
     const handlePlay = () => {
-        nav(`/quiz/${id}`);
+        nav(`/quizzes/quiz/${id}`);
     };
     return (
         <Card
