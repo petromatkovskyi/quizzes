@@ -25,7 +25,7 @@ function App() {
 
     return (
         <Routes>
-            <Route path="/" element={<Layout />}>
+            <Route path="/quizzes" element={<Layout />}>
                 <Route index element={<Main />} />
                 <Route path="quiz/:quizId" element={<Quiz />} />
                 <Route path="finish/?" element={<Finish />} />

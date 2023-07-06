@@ -9,7 +9,7 @@ import {
 
 const QuitDialog = ({ open, handleClose, nav }) => {
     const handleQuit = () => {
-        nav('/');
+        nav('/quizzes');
     };
     return (
         <Dialog

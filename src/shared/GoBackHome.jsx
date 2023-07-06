@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 const GoBackHome = () => {
     const nav = useNavigate();
 
-    const handleGoBackHome = () => nav('/', { replace: true });
+    const handleGoBackHome = () => nav('/quizzes', { replace: true });
 
     return (
         <Button variant="outlined" color="warning" onClick={handleGoBackHome}>

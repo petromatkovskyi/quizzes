@@ -36,7 +36,7 @@ const Quiz = ({ quizzes }) => {
             }
         }
         if (!quizzes.length || !isCorrectId) {
-            nav('/', { replace: true });
+            nav('/quizzes', { replace: true });
         }
     }, []);
 
@@ -65,7 +65,7 @@ const Quiz = ({ quizzes }) => {
             for (let i in result) {
                 searchString = searchString + `${i}=${result[i]}&`;
             }
-            nav(`/finish/${searchString}`);
+            nav(`/quizzes/finish/${searchString}`);
         }
     }, [answers]);
 
