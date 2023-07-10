@@ -32,8 +32,8 @@ const QuestionCard = ({
     activeStep,
     setAnswer,
     answer,
+    handleNext,
 }) => {
-    const [randomAnswers, setRandomAnswers] = useState([]);
     const [answerLabel, setAnswerLabel] = useState('');
     const [isAnswered, setIsAnswered] = useState(false);
 
@@ -51,13 +51,13 @@ const QuestionCard = ({
             timeAmount: new Date() - startDate,
         };
         setAnswer(answerObj);
-        if (answer && !isAnswered) {
-            setIsAnswered(true);
-        }
+        if (answer && !isAnswered) setIsAnswered(true);
+
+        if (!answer.label) handleNext();
     };
 
     useEffect(() => {
-        setRandomAnswers((prevRandomAnswers) => {
+        if (activeQuestion.category && !answer?.order.length) {
             const incorrectAnswers = [...activeQuestion?.incorrect_answers];
 
             incorrectAnswers.splice(
@@ -65,8 +65,9 @@ const QuestionCard = ({
                 0,
                 activeQuestion?.correct_answer
             );
-            return incorrectAnswers;
-        });
+            setAnswer({ num: activeStep, order: incorrectAnswers });
+        }
+
         setIsAnswered(false);
         setAnswerLabel('');
     }, [activeQuestion]);
@@ -104,7 +105,7 @@ const QuestionCard = ({
                     marginBottom: 2,
                 }}
             >
-                {randomAnswers.map((answerItem) => {
+                {answer?.order?.map((answerItem) => {
                     const decodedAnswer = decodeEntities(answerItem);
                     return (
                         <FormControlLabel

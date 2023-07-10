@@ -88,11 +88,10 @@ const Quiz = ({ quizzes }) => {
     const setAnswer = (answer) => {
         setAnswers((prevAnswers) => {
             if (answer.num > prevAnswers.at(-1)?.num || !prevAnswers.length) {
-                handleNext();
                 return [...prevAnswers, answer];
             }
             return prevAnswers.map((prevAnswer) =>
-                prevAnswer.num === answer.num ? answer : prevAnswer
+                prevAnswer.num === answer.num ? { ...prevAnswer, ...answer } : prevAnswer
             );
         });
     };
@@ -105,6 +104,7 @@ const Quiz = ({ quizzes }) => {
                     activeStep={activeStep + 1}
                     setAnswer={setAnswer}
                     answer={answers[activeStep]}
+                    handleNext={handleNext}
                 />
                 <MobileStepper
                     variant="text"
